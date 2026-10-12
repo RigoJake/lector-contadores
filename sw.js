@@ -1,6 +1,6 @@
 /* Service worker - Lector de Contadores. Guarda la app para abrirla sin conexión.
    Al publicar una versión nueva, cambiá el número de CACHE para forzar la actualización. */
-var CACHE = "contadores-v3.1";
+var CACHE = "contadores-v4.0";
 var ARCHIVOS = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", function(e){
@@ -22,6 +22,7 @@ self.addEventListener("fetch", function(e){
   if(e.request.method !== "GET") return;
   var url = new URL(e.request.url);
   if(url.origin !== location.origin) return;
+  if(/admin\.html$/.test(url.pathname)) return;   // el panel siempre se carga del servidor
   e.respondWith(
     caches.match(e.request, {ignoreSearch:true}).then(function(hit){
       var red = fetch(e.request).then(function(resp){
