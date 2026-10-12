@@ -1,6 +1,6 @@
 /* Service worker - Lector de Contadores. Guarda la app para abrirla sin conexión.
    Al publicar una versión nueva, cambiá el número de CACHE para forzar la actualización. */
-var CACHE = "contadores-v2.7";
+var CACHE = "contadores-v3.1";
 var ARCHIVOS = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", function(e){
