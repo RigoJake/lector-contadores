@@ -1,7 +1,7 @@
 /* Service worker - Lector de Contadores. Guarda la app para abrirla sin conexión.
    La página principal se pide primero al servidor (así cada versión nueva se ve enseguida)
    y, si no hay conexión, se abre la copia guardada. */
-var CACHE = "contadores-v4.0.1";
+var CACHE = "contadores-v4.0.2";
 var ARCHIVOS = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", function(e){
